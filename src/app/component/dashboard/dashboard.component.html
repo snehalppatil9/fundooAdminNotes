@@ -1,0 +1,64 @@
+<nav class="navbar fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Admin</a>
+  <div class="col-xs-2 col-sm-2 col-md-4 col-lg-1 text_align_end">
+    <button class="btn btn-outline-success text" type="submit" id=logout><h3>logout</h3></button>
+  </div>
+</nav>
+<div class="middle text_align_center">
+<div class="col-xs-2 col-sm-2 col-md-4 col-lg-10">
+<button class="btn btn-outline-primary mr-4" (click)="open('focusFirst')">
+    <div>Advance</div>
+    <div class="text-dark" aria-hidden="true"><small>count:</small></div>
+  </button>
+  <button class="btn btn-outline-primary" (click)="open('autofocus')">
+    <div>Basic</div>
+    <div class="text-dark" aria-hidden="true"><small>count:</small></div>
+  </button>
+</div>
+</div>
+<br><br>
+<div class="card1">
+<div class="col-lg-12 col-xs-2 col-sm-2 col-md-4">
+  <div class="card">
+      <div class="card-body">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+                
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar fixed-bottom navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Fixed bottom</a>
+  </nav> 
+
