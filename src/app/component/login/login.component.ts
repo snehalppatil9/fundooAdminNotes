@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
       $(document).ready(function(){
-        var id=localStorage.getItem("fundooId");
+        var id=localStorage.getItem("Id");
 
        $("button").click(function(){
         try{
@@ -63,8 +63,7 @@ export class LoginComponent implements OnInit {
              password :password1
           },
           success: function (data) {
-            localStorage.setItem("fundooId",data.id);
-
+            localStorage.setItem("Id",data.id);
             /**
             * 
             * @description if the admin login is success then it will directly take to admin dashboard page
@@ -79,10 +78,9 @@ export class LoginComponent implements OnInit {
         });
         return false;
       }catch(e){
-        // if(e instanceof SyntaxError || e instanceof ReferenceError || e instanceof TypeError || e instanceof RangeError){
-        // }
-        console.log(e);
-        
+        if(e instanceof SyntaxError || e instanceof ReferenceError || e instanceof TypeError || e instanceof RangeError){
+        }
+       
       }
       });
     
