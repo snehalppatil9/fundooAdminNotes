@@ -1,3 +1,6 @@
+<head>
+  <!-- <link rel="stylesheet" href="../dashboard/dashboard.component.ts"> -->
+</head>
 <nav class="navbar fixed-top navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Admin</a>
   <div class="col-xs-2 col-sm-2 col-md-4 col-lg-1 text_align_end">
@@ -5,60 +8,70 @@
   </div>
 </nav>
 <div class="middle text_align_center">
-<div class="col-xs-2 col-sm-2 col-md-4 col-lg-10">
-<button class="btn btn-outline-primary mr-4" (click)="open('focusFirst')">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+<button class="btn btn-outline-primary mr-4" (click)="open('autofocus')">
     <div>Advance</div>
-    <div class="text-dark" aria-hidden="true"><small>count:</small></div>
+    <div class="text-dark" aria-hidden="true" id="advance"><small>count:</small></div>
   </button>
   <button class="btn btn-outline-primary" (click)="open('autofocus')">
     <div>Basic</div>
-    <div class="text-dark" aria-hidden="true"><small>count:</small></div>
+    <div class="text-dark" aria-hidden="true" id="basic"><small>count:</small></div>
   </button>
 </div>
 </div>
 <br><br>
 <div class="card1">
 <div class="col-lg-12 col-xs-2 col-sm-2 col-md-4">
-  <div class="card">
-      <div class="card-body">
-          <table class="table">
+  <div class="card" id=card>
+      <div class="container">
+          <table id="userlistTable" class="table">
               <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
+                <tr style="height:50%">
+                  <th scope="col">id</th>
+                  <th scope="col">firstName</th>
+                  <th scope="col">lastName</th>
+                  <th scope="col">phoneNumber</th>
+                  <th scope="col">service</th>
                 </tr>
               </thead>
-              
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                
-              </tbody>
             </table>
       </div>
     </div>
   </div>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" >
+        <div class="modal-content dialog_background">
+            <div class="modal-header dialog_header">
+                <h3 class="modal-title dialog_title" id="exampleModalLabel">User Details</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class=padding_5>
+                <h5><label id='labelFirstName'></label></h5>
+                <h5><label id='labelLastName'></label></h5>
+                <h5><label id='labelEmail'></label></h5>
+                <h5><label id='labelPhoneNum'></label></h5>
+                <h5><label id='labelService'></label></h5>
+                <h5><label id='labelDate'></label></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
 <nav class="navbar fixed-bottom navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Fixed bottom</a>
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">4</a></li>
+    <li class="page-item"><a class="page-link" href="#">5</a></li>
+    <li class="page-item"><a class="page-link" href="#">6</a></li>
+    <li class="page-item"><a class="page-link" href="#">7</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
   </nav> 
 
