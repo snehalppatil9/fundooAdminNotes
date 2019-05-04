@@ -1,3 +1,14 @@
+/******************************************************************************
+ *  Execution       :   1. default node         cmd> login.component.ts 
+ *
+ *  Purpose         : To login to Fundoo Notes Admin
+ * 
+ *  @file           : login.component.ts
+ *  @author         : Snehal Patil
+ *  @version        : 1.0
+ *  @since          : 29-04-2019
+ *
+ ******************************************************************************/
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 // declare var $: any;

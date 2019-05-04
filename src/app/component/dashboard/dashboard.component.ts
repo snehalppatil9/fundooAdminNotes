@@ -1,3 +1,14 @@
+/******************************************************************************
+ *  Execution       :   1. default node         cmd> dashboard.component.ts 
+ *
+ *  Purpose         : Dashboard page to fetch all the table data  
+ * 
+ *  @file           : dashboard.component.ts 
+ *  @author         : Snehal Patil
+ *  @version        : 1.0
+ *  @since          : 29-04-2019
+ *
+ ******************************************************************************/
 import { Component, OnInit } from '@angular/core';
 // import jQuery 
 import * as $ from 'jquery';
@@ -12,8 +23,35 @@ export class DashboardComponent implements OnInit {
   dataTable: any[];
   constructor() { }
   ngOnInit() {
-    var rowindex;
     var id = localStorage.getItem("Id");
+    $.ajax({
+      type: 'GET',
+      url: 'http://34.213.106.173/api/user/UserStatics',
+      dataType: "json",
+      headers: {
+        "Authorization": id
+      },
+      success: function (data) {
+        var html = "";
+        for (var i = 0; i < data.data.details.length; i++) {
+          html += "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'><div class='card' style='margin-top:5%;'>";
+          html += "<div class='card-title' style='padding-top:5%;color: red'><center><h3>" + data.data.details[i].service + "</h3></center></div>";
+          html += "<div class='card-body' style='padding-bottom:5%'><center>number of users: " + data.data.details[i].count + "</center></div>";
+          html += "</div></div>";
+        }
+        /**
+         * 
+         * @description according to the number of service card, it will print
+         */
+        
+        //$("#userlistTable").show();
+
+        $("#services").html(html);
+      },
+      error: function (request, status, error) {
+      }
+    });
+    var rowindex;
     /**
      * @description getting the userlist table
      */
@@ -69,6 +107,6 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
-      
-}
+
+  }
 }
