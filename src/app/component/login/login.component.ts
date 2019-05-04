@@ -1,7 +1,7 @@
 /******************************************************************************
  *  Execution       :   1. default node         cmd> login.component.ts 
  *
- *  Purpose         : To login to Fundoo Notes Admin
+ *  Purpose         : To login your Fundoo Notes Admin Account  
  * 
  *  @file           : login.component.ts
  *  @author         : Snehal Patil
