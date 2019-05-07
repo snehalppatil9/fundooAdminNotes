@@ -43,15 +43,11 @@ export class DashboardComponent implements OnInit {
          * 
          * @description according to the number of service card, it will print
          */
-        
-        //$("#userlistTable").show();
-
-        $("#services").html(html);
+         $("#services").html(html);
       },
       error: function (request, status, error) {
       }
     });
-    var rowindex;
     /**
      * @description getting the userlist table
      */
@@ -68,23 +64,10 @@ export class DashboardComponent implements OnInit {
         var table = $('#userlist').DataTable({
           "data": userList
         });
-
-        /**
-         * 
-         * @description getting the details of the particular user, when click on the details button
-         */
-        $('#userlist tbody').on('click', 'tr', function () {
-          rowindex = table.row(this).index();
-          $("#FirstName").text("First Name : " + data.data.data[rowindex].firstName);
-          $("#Email").text("Email : " + data.data.data[rowindex].email);
-          $("#Service").text("Service : " + data.data.data[rowindex].service);
-        });
-
-      },
+     },
       error: function (error) {
       }
-    }).fail(function (request, status, error) {
-    });
+    })
     /**
      * @description logging out
      */
