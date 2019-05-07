@@ -41,7 +41,7 @@ export class DashboardComponent implements OnInit {
         }
         /**
          * 
-         * @description according to the number of service card, it will print
+         * @description total number of count it will print
          */
          $("#services").html(html);
       },
@@ -61,7 +61,7 @@ export class DashboardComponent implements OnInit {
         for (var i = 0; i < list.length; i++) {
           userList.push([i + 1, list[i].firstName, list[i].email, list[i].service]);
         }
-        var table = $('#userlist').DataTable({
+        $('#userlist').DataTable({
           "data": userList
         });
      },

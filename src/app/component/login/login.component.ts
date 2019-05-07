@@ -73,9 +73,7 @@ export class LoginComponent implements OnInit {
               * 
               * @description if the admin login is success then it will directly take to admin dashboard page
               */
-              if (email1 == "admin@bridgelabz.com" && password1 == "123456789") {
-                window.location.href = "/dashboard";
-              }
+              window.location.href = "/dashboard";
             },
             error: function (request, status, error) {
               $("h5").text("Incorrect email or password");
