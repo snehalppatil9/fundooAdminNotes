@@ -91,5 +91,12 @@ export class DashboardComponent implements OnInit {
       });
     });
 
+     /**
+     * @description logging out
+     */
+    $("#approval").click(function () {
+      window.location.href = "/approval";
+    });
+
   }
 }

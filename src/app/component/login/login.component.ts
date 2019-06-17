@@ -28,21 +28,21 @@ export class LoginComponent implements OnInit {
            * 
            * @description taking the email and password values from frontend
            */
-          var email1 = $('#email').val();
-          var password1 = $('#password').val();
+          var email = $('#email').val();
+          var password = $('#password').val();
           /**
            * 
            * @description checking whether all the inputs are filled
            */
-          if (email1.length == 0 && password1.length == 0) {
+          if (email.length == 0 && password.length == 0) {
             $("h5").text("please fill all the inputs");
             return false;
           }
-          if (email1.length == 0) {
+          if (email.length == 0) {
             $("h5").text("please enter email");
             return false;
           }
-          if (password1.length == 0) {
+          if (password.length == 0) {
             $("h5").text("please enter password");
             return false;
           }
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
            * @description email validation
            */
           var regexEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-          if (regexEmail.test(email1) == false) {
+          if (regexEmail.test(email) == false) {
             $("h5").text("This is not the right way to write email.");
             return false;
           }
@@ -64,8 +64,8 @@ export class LoginComponent implements OnInit {
             url: 'http://34.213.106.173/api/user/adminLogin',
             dataType: "json",
             data: {
-              email: email1,
-              password: password1
+              email: email,
+              password: password
             },
             success: function (data) {
               localStorage.setItem("Id", data.id);
@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
               window.location.href = "/dashboard";
             },
             error: function (request, status, error) {
-              $("h5").text("Incorrect email or password");
+              $("h6").text("Incorrect email or password");
             }
           });
           return false;
